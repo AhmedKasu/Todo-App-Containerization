@@ -1,0 +1,53 @@
+Script started on Wed Jul 12 10:38:05 2023
+[1m[7m%[27m[1m[0m                                                                                                                                ]2;ahmedkasu@Ahmed-MacBook-Air:~/Downloads/part12-containers-applications-main/script-answers]1;..cript-answers]7;file://Ahmed-MacBook-Air.local/Users/ahmedkasu/Downloads/part12-containers-applications-main/script-answers\[0m[27m[24m[J[39m[0m[49m[40m[39m ahmedkasu@Ahmed-MacBook-Air [44m[30m[30m ~/Downloads/part12-containers-applications-main/script-answers [43m[34m[30m  main [49m[33m[39m [K[?1h=[?2004hscript exercise12_8.txt [K[A[105Ccd script-answers[K[1B[K[A[122C[14D..            [12Dscript-answers[14D..            [12Ddocker exec -it todo-backend-mongo-1 bash[K[K[A[99Cps[K[1B[K[A[114Cexec -it todo-backend-mongo-1[K[1Cbash     bash[A[87Ccd ..[K[1B[K[A[110Cdocker exec -it todo-backend-mongo-1 bash[K[K[A[99Cps[K[1B[K[A[114Ccontainer ls[12Dvolume inspect 1c40866919c9577cd9faa1cd7a13e64f7f430779fcefbcc7d365a8a5d3471309[K[49D[Kcd9faa1cd7a13e64f7f430779fcefbcc7d365a8a5d3471309[A[49Ccontainer ls[K[1B[K[A[124C[12Dps          [10Dexec -it todo-backend-mongo-1[K[1Cbash[A[87Ccd ..[K[1B[K[A[110Cscript-answers[14D..            [12Dscript-answers[17Dscript exercise12_8.txt [K[A[105C[K[1B[K[A[105Cscript exercise12_8.txt [K[A[105Ccd script-answers[K[1B[K[A[122C[14D..            [12Dscript-answers[14D..            [12Ddocker exec -it todo-backend-mongo-1 bash[K[K[A[99Cps[K[1B[K[A[114Ccontainer ls[12Dvolume inspect 1c40866919c9577cd9faa1cd7a13e64f7f430779fcefbcc7d365a8a5d3471309[K[49D[K[A[105Cls[K[1B[K[A[121C[9Dcompose -f docker-compose.dev.yml up[K[A[92Cps -a[K[1B[K[A[117Crm e469ps -a  compose -f docker-compose.dev.yml up[K[A[92Cvolume ls[K[1B[K[A[121Cinspect 1c40866919c9577[K[A[105Cls[K[1B[K[A[121C[9Dcompose -f docker-compose.dev.yml up[K[A[92Cvolume ls[K[1B[K[A[121Cinspect 1c40866919c9577[Kcd9faa1cd7a13e64f7f430779fcefbcc7d365a8a5d3471309[A[49Ccontainer ls[K[1B[K[A[124C[12Dps          [10Dexec -it todo-backend-mongo-1[K[1Cbash[A[87Ccd ..[K[1B[K[A[110Cscript-answers[14D..            [12Dscript-answers[17Dscript exercise12_8.txt [K[A[105C[K[1B[K[A[105Cscript exercise12_8.txt [K[A[105Ccd script-answers[K[1B[K[A[122C[14D..            [12Dscript-answers[14D..            [12Ddocker exec -it todo-backend-mongo-1 bash[K[?1l>[?2004l
+]2;docker exec -it todo-backend-mongo-1 bash]1;docker[?2004hroot@9e4dee2d65c6:/# mongoose   sh -u root -p example
+[?2004l]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	64ae593846a41ad19ccd27df
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.1[0m
+Using MongoDB:		6.0.7
+[1m[33mUsing Mongosh[0m:		1.10.1
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+[1G[0J [1G[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2023-07-11T09:38:35.566+00:00: vm.max_map_count is too low
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshow dbs
+[1madmin[0m         100.00 KiB
+[1mconfig[0m         72.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   56.00 KiB
+[1G[0Jtest> [7Guse the_database
+switched to db the_database
+[1G[0Jthe_database> [15Gshow collections
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todos.insertOne({text[33mtext[39m:[32m"[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32mb[39m[32me[39m[32ml[39m[32mt[39m[32m"[39m,d[36mdo[39mdone:fals[33mfalse[39m})
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId("64ae5a4046a41ad19ccd27e0")
+}
+[1G[0Jthe_database> [15Gdb.todos.find({})
+[
+  {
+    _id: ObjectId("64ad1cf878b8b2af1f67e177"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("64ad1cf878b8b2af1f67e178"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("64ae5a4046a41ad19ccd27e0"),
+    text: [32m'Increase the number of tools in my toolbelt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gexit
+[?2004hroot@9e4dee2d65c6:/# exxx  it
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                                                                                ]2;ahmedkasu@Ahmed-MacBook-Air:~/Downloads/part12-containers-applications-main/script-answers]1;..cript-answers]7;file://Ahmed-MacBook-Air.local/Users/ahmedkasu/Downloads/part12-containers-applications-main/script-answers\[0m[27m[24m[J[39m[0m[49m[40m[39m ahmedkasu@Ahmed-MacBook-Air [44m[30m[30m ~/Downloads/part12-containers-applications-main/script-answers [43m[34m[30m  main [49m[33m[39m [K[?1h=[?2004heexit[?1l>[?2004l
+]2;exit]1;exit
+Script done on Wed Jul 12 10:46:56 2023
