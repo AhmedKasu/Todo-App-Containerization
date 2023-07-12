@@ -63,3 +63,5 @@ typings/
 # mongodb container data
 mongo_data/
 
+#vscode config
+.vscode
