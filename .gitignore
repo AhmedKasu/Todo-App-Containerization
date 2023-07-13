@@ -60,8 +60,9 @@ typings/
 # next.js build output
 .next
 
-# mongodb container data
+# persistent container data
 mongo_data/
+redis_data/
 
 #vscode config
 .vscode
