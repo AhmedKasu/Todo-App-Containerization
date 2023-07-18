@@ -1,5 +1,8 @@
 FROM node:16 AS base
 
+RUN addgroup app && adduser -S -G app app
+USER app
+
 WORKDIR /usr/src/app
 COPY package*.json .
 
