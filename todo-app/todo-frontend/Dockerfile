@@ -1,8 +1,5 @@
 FROM node:16 AS base
 
-RUN addgroup app && adduser -S -G app app
-USER app
-
 WORKDIR /usr/src/app
 COPY package*.json .
 
@@ -16,8 +13,9 @@ FROM test-stage AS build-stage
 RUN npm install --package-lock-only
 RUN npm ci --omit=dev
 COPY --from=test-stage /usr/src/app .
-ENV REACT_APP_BACKEND_URL=http://localhost:3000
+ENV REACT_APP_BACKEND_URL=http://localhost:8080/api
 RUN npm run build
 
-FROM nginx:1.20-alpine AS production-stage
+FROM nginxinc/nginx-unprivileged:1.25-alpine3.18 AS production-stage
+
 COPY --from=build-stage /usr/src/app/build /usr/share/nginx/html
